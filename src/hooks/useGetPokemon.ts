@@ -1,5 +1,5 @@
 'use client'
-import { api } from '@/api/fetch/api'
+import { api } from '@/api/api'
 import { ApiResponse } from '@/types/ApiResponse'
 import { useState, useEffect } from 'react'
 
