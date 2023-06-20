@@ -1,6 +1,6 @@
 'use client'
 import { api } from '@/api/api'
-import { ApiResponse } from '@/types/ApiResponse'
+import { ApiResponse } from '@/types'
 import { useState, useEffect } from 'react'
 
 export const useGetPokemon = <T>(url: string): ApiResponse<T> => {

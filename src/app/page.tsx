@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import { useGetPokemon } from '@/hooks/useGetPokemon'
-import { IPokemonResponse } from '@/types/pokemons/pokemon'
+import { IPokemonResponse } from '@/types'
 
 export default function Home() {
  const { data, error, isLoading } = useGetPokemon<IPokemonResponse>('/pokemon?offset=20&limit=20')
