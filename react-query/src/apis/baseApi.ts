@@ -5,8 +5,6 @@ const apiUrl = String(process.env.NEXT_PUBLIC_API)
 class ApiClient {
  private accessToken: string | undefined
 
- constructor() {}
-
  private async fetchToken(): Promise<string> {
   // Lógica para obtener el token de acceso (ejemplo: desde localStorage)
   // const token = localStorage.getItem('accessToken')
@@ -49,7 +47,6 @@ class ApiClient {
    Authorization: `Bearer ${token}`,
   }
 
-  console.log({ apiUrl })
   const response = await fetch(`${apiUrl}${url}`, {
    method,
    headers,

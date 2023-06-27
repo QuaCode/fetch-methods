@@ -1,11 +1,17 @@
 'use client'
 import { useGetAllUsers } from '@/apis/users/useGetAllUsers'
+import { useSetUser } from '@/apis/users/useSetUser'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export const ListUsers = () => {
  const [count, setCount] = useState(0)
  const { data, isError, isLoading } = useGetAllUsers()
+ const { mutate } = useSetUser()
+
+ const onSubmit = () => {
+  mutate({ userName: 'string' })
+ }
 
  return (
   <main style={{ maxWidth: 1200, marginInline: 'auto', padding: 20 }}>
@@ -14,6 +20,10 @@ export const ListUsers = () => {
     <button onClick={() => setCount((prev) => prev + 1)}>increment</button>
     <button onClick={() => setCount((prev) => prev - 1)} style={{ marginInline: 16 }}>
      decrement
+    </button>
+
+    <button onClick={onSubmit} style={{ marginInline: 16 }}>
+     Request DATA
     </button>
     <button onClick={() => setCount(0)}>reset</button>
    </div>

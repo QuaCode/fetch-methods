@@ -49,7 +49,6 @@ class ApiClient {
    Authorization: `Bearer ${token}`,
   }
 
-  console.log({ apiUrl })
   const response = await fetch(`${apiUrl}${url}`, {
    method,
    headers,
